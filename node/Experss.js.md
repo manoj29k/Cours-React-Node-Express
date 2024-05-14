@@ -1,0 +1,50 @@
+```sh 
+	Install Express.js
+	npm install express
+```
+- Pour installer express il faut faire un initialisation du dossier {npm init}
+
+## Method Get
+```js
+server.get("/api/todo", (req, res) => {
+  const dataURL = req.query;
+  if (!dataURL.id) {
+    return res.status(400).json({ err: "id oubligatoire" });
+  }
+  fs.readFile("./source/data/todos.json", (err, contenu) => {
+    if (err) {
+      return res
+        .status(500)
+        .json({ err: "un problème est survenue sur le server" });
+    }
+    const dataString = contenu.toString();
+    const data = JSON.parse(dataString);
+    const todoData = data.todos.find((todo) => {
+      return todo.id == dataURL.id;
+    });
+    if (!todoData) {
+      return res.status(404).json({ err: "Tache non trouvée" });
+    }
+    return res.json(todoData);
+  });
+});
+```
+
+## Method Delete
+```js
+FILTER
+	server.delete("/api/todo", (req, rep) => {
+    const dataURL = req.query;
+    if (!dataURL.id) {
+      return rep.status(500).json({ error: "ID obligatoire" });
+    }
+    
+    const contenu = fs.readFileSync("./source/data/todos.json");
+    const contenuString = contenu.toString();
+    const data = JSON.parse(contenuString);
+    data.todos = data.todos.filter((todo) => todo.id != dataURL.id);
+    fs.writeFileSync("./source/data/todos.json", JSON.stringify(data));
+    return rep.json({message:"Tache suprimmée"})
+  });
+```
+ 
