@@ -1,3 +1,5 @@
+
+Express est un library pour node.js
 ```sh 
 	Install Express.js
 	npm install express
@@ -47,4 +49,18 @@ FILTER
     return rep.json({message:"Tache suprimmée"})
   });
 ```
- 
+
+## MiddleWare 
+
+
+- Creatinng random id's
+```JS
+	import crypto from "crypto";
+	id: crypto.randomUUID()
+```
+# CRUD
+				CRUD == CREATE     READ     UPDATE       DELETE
+						   ^         ^         ^            ^
+Méthode HTTP de CRUD         Post               GET            PUT                DELETE
+
+

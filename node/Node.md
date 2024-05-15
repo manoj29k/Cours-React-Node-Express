@@ -2,6 +2,7 @@
 -  Créer des API
 - Gérer les données
 
+Node.js est un moteur qui interprete js en c++ pour communiquer avec la machine
 
 pour créer un package.json automatique par Node
 ```bash

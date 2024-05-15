@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"5db4d9d4e3feb315","x":-1520,"y":-1440,"width":1360,"height":2560,"type":"file","file":"Mongo-DB/Mongo.md"},
+		{"id":"6091ad34de9ac38a","x":0,"y":-1360,"width":2240,"height":1058,"type":"file","file":"Mongo-DB/Pasted image 20240515135517.png"}
+	],
+	"edges":[
+		{"id":"717296bb196cb131","fromNode":"6091ad34de9ac38a","fromSide":"left","toNode":"5db4d9d4e3feb315","toSide":"right"}
+	]
+}

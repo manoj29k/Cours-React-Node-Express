@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"14e027d53d2a53ba","x":-300,"y":-360,"width":400,"height":980,"type":"file","file":"Recap/RECAP.md"},
+		{"id":"7d88811e705a8470","x":160,"y":300,"width":839,"height":320,"type":"file","file":"Recap/Pasted image 20240515135217.png"}
+	],
+	"edges":[
+		{"id":"ca0fa88ec0685140","fromNode":"7d88811e705a8470","fromSide":"top","toNode":"14e027d53d2a53ba","toSide":"right"}
+	]
+}
