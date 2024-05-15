@@ -50,6 +50,32 @@ FILTER
   });
 ```
 
+## Method Post
+```js
+server.post("/api/todos", (req, rep) => {
+  const data = req.body;
+  if (!data.title || !data.date) {
+    return rep
+      .status(400)
+      .json({ error: "Titre et date obligatoire" });
+  }
+
+  const dataTodos = fs.readFileSync("./src/data/todos.json");
+  const todosObject = JSON.parse(dataTodos.toString());
+  todosObject.todos.push({
+    id: Math.floor(Math.random() * 1000),
+    title: req.body.title,
+    date: req.body.date,
+  });
+
+  fs.writeFileSync("./src/data/todos.json",
+    JSON.stringify(todosObject)
+  );
+  return rep.json({
+    message:"Tache ajouté"
+  });
+});
+```
 ## MiddleWare 
 
 
@@ -58,6 +84,7 @@ FILTER
 	import crypto from "crypto";
 	id: crypto.randomUUID()
 ```
+
 # CRUD
 				CRUD == CREATE     READ     UPDATE       DELETE
 						   ^         ^         ^            ^
